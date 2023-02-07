@@ -1,0 +1,18 @@
+
+#alyo-bottone-switch{
+  position: relative;
+  height: 40px;
+  width: 66px;
+  border-radius: 40px;
+  border: 0px;
+}
+
+
+#alyo-indicatore-switch{
+  position: absolute;
+  top: 5px;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  border: 0px;
+}

@@ -1,0 +1,40 @@
+<div *ngIf="valore != null; else elseBlock" [class]="classe.contenitore" [style]="stile.contenitore" class="alyo-contenitore">
+
+   <input [ngModel]="valore" [type]="tipo_input" [class]="classe.input" (focusin)="apriChiudiPanello()" (keyup)="validazione(onkey($event));" [ngStyle]="{ 'border': cornice ? '1px solid #ff0000' : 'none' }" [placeholder]="placeholder" >
+
+   <button *ngIf="bottone_cancella && valore.length > 0"                                              [style]="stile.bottone_cancella"    class="classe.bottone_cancella alyo-cancella" (click)="valore = ''"><fa-icon [icon]="faCircleXmark"></fa-icon></button>
+   <button *ngIf="valore.length > 0 && tipo == 'password' && visibilita == false" [style]="stile.bottone_no_visibile" class="classe.bottone_no_visibile alyo-visibile alyo-visibile-falso " (click)="visibilita = true;  tipo_input = 'text'; "><fa-icon [icon]="faEyeSlash"></fa-icon></button>
+   <button *ngIf="valore.length > 0 && tipo == 'password' && visibilita == true"  [style]="stile.bottone_visibile"    class="classe.bottone_visibile alyo-visibile alyo-visibile-vero "     (click)="visibilita = false; tipo_input = 'password'; "><fa-icon [icon]="faEye"></fa-icon></button>
+
+   <div *ngIf="panello_validazione == true && tipo == 'password'" class="alyo-contenitore-validazione alyo-piano-10 alyo-sfocato-bianco-50 alyo-larghezza-100 alyo-bordo-rotondo-10px">
+    <div *ngFor="let item of lista_validazione" class="alyo-posizione-relativo alyo-margine-sotto-10px">
+      <div class="alyo-margine-0px ">{{ item.nome }}</div>
+      <fa-icon *ngIf="item.validazione" style="top: 0px; right: 0px;" class="alyo-posizione-assoluto alyo-testo-verde" [icon]="faCircleCheck"></fa-icon>
+    </div>
+   </div>
+
+   <div *ngIf="panello_validazione == true && tipo == 'email'" class="alyo-contenitore-validazione alyo-piano-10 alyo-sfocato-bianco-50 alyo-larghezza-100 alyo-bordo-rotondo-10px">
+    <div *ngFor="let item of lista_validazione" class="alyo-posizione-relativo alyo-margine-sotto-10px">
+      <div class="alyo-margine-0px ">{{ item.nome }}</div>
+      <fa-icon *ngIf="item.validazione" style="top: 0px; right: 0px;" class="alyo-posizione-assoluto alyo-testo-verde" [icon]="faCircleCheck"></fa-icon>
+    </div>
+   </div>
+
+   <alyofonts [testo]="valore" (esterno)="esterno($event)"></alyofonts>
+   <div *ngIf="panello_validazione == true && tipo == 'fonts'" style="position: absolute; z-index: 2; overflow: scroll; backdrop-filter: blur(15px); background-color: rgba(255, 255, 255, 0.5);" [style]="stile.contenitore.contenitore" [class]="classe.contenitore.contenitore">
+      <button *ngFor="let item of alyoFonts.listaTesti" (click)="valore = alyoFonts.fontsSelezionato(valore,item.fonts); panello_validazione = false;"  [class]="classe.contenitore.bottoni">{{ item.valore }}</button>
+   </div>
+
+</div>
+
+<ng-template #elseBlock>
+  <div class="alyo-contenitore" [class]="classe.contenitore" [style]="stile.contenitore">
+    <input [(ngModel)]="item.valore" [type]="tipo_input" [class]="classe.input" (focusin)="apriChiudiPanello()" (keyup)="validazione(onkey($event));" [ngStyle]="{ 'border': cornice ? '1px solid #ff0000' : 'none' }" [placeholder]="placeholder" >
+    <button *ngIf="item.valore && bottone_cancella"                          [style]="stile.bottone_cancella"    class="classe.bottone_cancella alyo-cancella"(click)="item.valore = ''"><fa-icon [icon]="faCircleXmark"></fa-icon></button>
+    <button *ngIf="item.valore && tipo == 'password' && visibilita == false" [style]="stile.bottone_no_visibile" class="classe.bottone_no_visibile alyo-visibile alyo-visibile-falso " (click)="visibilita = true; tipo_input = 'text'; "><fa-icon [icon]="faEyeSlash"></fa-icon></button>
+    <button *ngIf="item.valore && tipo == 'password' && visibilita == true"  [style]="stile.bottone_visibile"    class="classe.bottone_visibile alyo-visibile alyo-visibile-vero "  (click)="visibilita = false; tipo_input = 'password'; "><fa-icon [icon]="faEye"></fa-icon></button>
+
+  </div>
+</ng-template>
+
+

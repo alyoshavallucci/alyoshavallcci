@@ -1,0 +1,44 @@
+
+.alyo-contenitore {
+  position: relative;
+}
+
+.alyo-cancella {
+  position: absolute;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 5px;
+}
+
+.alyo-visibile{
+  position: absolute;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 25px;
+}
+
+/* .alyo-visibile-vero{
+  color: rgba(0, 0, 255, 1);
+}
+
+.alyo-visibile-falso{
+  color: rgba(192, 192, 192, 0.7);
+} */
+
+.alyo-contenitore-validazione{
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  padding: 10px;
+}
+
+.alyo-contenitore-alyofonts {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  padding: 10px;
+}

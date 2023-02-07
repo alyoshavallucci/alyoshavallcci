@@ -1,0 +1,21 @@
+
+<div class="row" style="padding: 5px; margin: 0px;">
+   <div class="col-sm-6" style="padding: 5px; margin: 0px;">
+      <div [ngClass]="[cac.colorefisso('sfondocontenitore',0),cac.colorefisso('testo',0)]" class=" alyo-altezza-60px alyo-ombra alyo-padding-10px alyo-bordo-rotondo-20px">
+        <h2 class="alyo-posizione-assoluto">Modalita Scura</h2>
+        <div class="alyo-posizione-assoluto" style="right: 10px"><alyo-bottoneswitch [classe]="grafica['switch']" [sfondo]="{true: cac.colorevariabile('sfondocontenitore'), false: 'alyo-bianco-trasparente-50'}" [attivo]="!cac.modalitachiara" (esterno)="bottonemodalitascura = $event;" (evento)="aggiornamento();"></alyo-bottoneswitch></div>
+      </div>
+   </div>
+   <div class="col-sm-6" style="padding: 5px; margin: 0px;">
+    <div [ngClass]="[cac.colorefisso('sfondocontenitore',0),cac.colorefisso('testo',0)]" class=" alyo-ombra alyo-padding-10px alyo-bordo-rotondo-20px">
+
+        <h2 class="alyo-testo-centro" >Data Di Rilascio:</h2>
+        <h4 class="alyo-testo-centro" >Gennaio 2023</h4>
+        <br>
+        <h2 class="alyo-testo-centro">Autore:</h2>
+        <h4 class="alyo-testo-centro" >👱🏻‍♂️ ᗩլ¥ΘŠĦᗩ ᐺᗩլլᑗ©©Ї</h4>
+
+    </div>
+   </div>
+</div>
+

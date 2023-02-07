@@ -1,0 +1,16 @@
+.icon::before {
+  display: none;
+}
+
+.login::before {
+  font: var(--fa-font-solid);
+  content: "\f007";
+}
+
+.tps::before {
+  font: var(--fa-font-solid);
+  content: "\f1ea";
+}
+
+/*<!--versione 3.1-->*/
+

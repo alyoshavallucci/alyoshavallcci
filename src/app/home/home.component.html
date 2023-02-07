@@ -1,0 +1,19 @@
+
+
+<div style="margin: 0px; padding: 10px;">
+  <div *ngFor="let item of lista_sitiweb" class="alyo-ombra alyo-bordo-rotondo-20px alyo-altezza-470px alyo-padding-10px" [ngClass]="[cac.colorefisso('sfondocontenitore',0),cac.colorefisso('testo',0)]" style="margin: 0px 0px 10px 0px; padding: 10px; position: relative"> 
+   
+      <div>
+         <alyo-iconanomesito [valocita]="10000" (classe)="item.classe = $event" [lista_loghi]="item.icona" [tipo]="'testo'" [testofonts]="item.nome"></alyo-iconanomesito>
+         <img src="{{ item.classe.logo_corrente }}" class="alyo-display-blocco-inlinea alyo-margine-destro-10px alyo-larghezza-50px alyo-altezza-50px alyo-margine-sotto-10px">
+         <h1 class="alyo-display-blocco-inlinea">{{ item.classe.nome_corrente }}</h1>
+      </div>
+      <a href="{{ item.url.valore }}" target="_blank" style="position: absolute; top: 0px; left: 0px;" class=" alyo-posizione-assoluto alyo-trasparente-0 alyo-altezza-100 alyo-larghezza-100 alyo-bordo-rotondo-20px"></a>
+      <iframe class="alyo-bordo-rotondo-10px alyo-larghezza-100 alyo-altezza-380px alyo-margine-0px" [src]="item.url.sanitize" scrolling="no" allow-top-navigation="no" frameborder="0" allowfullscreen></iframe>
+  
+  </div>
+</div>
+
+
+
+

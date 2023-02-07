@@ -1,0 +1,38 @@
+
+<div class="row alyo-altezza-100" style="margin: 0; overflow: hidden;">
+   <div class="col-sm-3" style="padding: 0px; margin: 0px;">
+   </div>
+   <div class="col-sm-6" style="padding: 0px; margin: 0px;">
+        <br>
+        
+         <alyo-colori            [velocita]="10000" [colori]="colori" (esterno)="cac = $event; aggiornaLayout()"></alyo-colori>
+         <alyo-iconanomesito     [valocita]="10000" [lista_loghi]="colori['variabile']['icone'][cac.modalitachiara]" [testofonts]="nomeprofilo"></alyo-iconanomesito>
+         <alyo-scrittescorrevoli [velocita]="10000" [ngclasse]="{titolo: cac.colorefisso('sfondocontenitore',0),contenitore: cac.colorevariabile('testo')}"  [classe]="{ titolo: 'alyo-padding-10px alyo-bordo-rotondo-10px alyo-ombra alyo-testo-centro', contenitore: 'alyo-altezza-100px'}" [stile]="{ contenitore: 'width: 100%; height: 20vmin;'}" [lista_scritte]="lista_nome_profilo" (esterno)="classealyoscrittescorrevoli = $event"></alyo-scrittescorrevoli>
+  
+         <div class="alyo-margine-sotto-10px alyo-padding-10px">
+            <div [ngClass]="cac.colorefisso('sfondocontenitore',0)" class="alyo-ombra row alyo-bordo-rotondo-20px alyo-padding-10px " style="margin: 0px">
+               <div *ngFor="let item of lista_sezioni" class="col-4 alyo-bianco-trasparente-0" style="margin: 0px; padding: 0px;">
+                  <button [ngClass]="item.selezione == true ? cac.colorevariabile('testo') : 'alyo-testo-grigio40'" (click)="aggiornaBottoni(item.indice)" class="alyo-bordo-0 alyo-testo-centro alyo-bordo-0px alyo-larghezza-100 alyo-bianco-trasparente-0 alyo-trasparente-hover-30 alyo-bordo-rotondo-10px">
+                    <fa-icon class="alyo-testo-24px " [icon]="item.icona"></fa-icon><br>
+                    {{ item.label }}
+                  </button>
+               </div>
+            </div>
+          </div>
+         
+         <app-home          *ngIf="lista_sezioni[0].selezione" [classealyocolori]="cac"></app-home>
+         <alyo-curriculum   *ngIf="lista_sezioni[1].selezione" [classealyocolori]="cac" > </alyo-curriculum>         
+         <alyo-impostazioni *ngIf="lista_sezioni[2].selezione" [classealyocolori]="cac" [classealyofonts]="this" ></alyo-impostazioni>
+
+   </div>
+
+
+
+      
+</div >
+
+
+
+
+
+
